@@ -1,0 +1,13 @@
+[user]
+	name = Sven Kõiv
+[includeIf "gitdir:~/Projects/"]
+	path = .gitconfig-work
+[core]
+	excludesfile = ~/.gitignore_global
+[pull]
+	rebase = true
+[alias]
+	b = branch -vv
+  l  = log -8 --graph --oneline --decorate
+ 	s  = !git status -sb
+  ll = log --stat --decorate --source -p
