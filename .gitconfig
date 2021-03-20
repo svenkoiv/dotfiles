@@ -1,5 +1,6 @@
 [user]
 	name = Sven Kõiv
+	email = 
 [includeIf "gitdir:~/Projects/"]
 	path = .gitconfig-work
 [core]
