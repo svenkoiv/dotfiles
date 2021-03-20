@@ -1,0 +1,12 @@
+{
+  "eslint.autoFixOnSave": true,
+  "diagnostic.displayByAle": true,
+  "snippets.extends": {
+    "javascriptreact": ["javascript"],
+    "typescript": ["javascript"],
+    "typescriptreact": ["javascript"]
+  },
+  "java.completion.enabled": true,
+  "java.completion.maxResults": 5,
+  "java.jdt.ls.vmargs": "-javaagent:/usr/local/share/lombok/lombok.jar -Xbootclasspath/a:/usr/local/share/lombok/lombok.jar"
+}
