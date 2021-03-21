@@ -28,4 +28,3 @@ HISTFILESIZE=10000
 shopt -s histappend
 
 eval "$(direnv hook bash)"
-alias gitc="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"

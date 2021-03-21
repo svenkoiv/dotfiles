@@ -52,11 +52,6 @@ utils.map('n', '<leader>m', ':Marks<cr>', { silent = true, noremap = true })
 --[[--------------------------------]]
 --[[ DIRVISH CONFIGURATION        --]]
 --[[--------------------------------]]
--- vim.g.netrw_liststyle = 0
--- vim.g.netrw_sort_sequence = '[/]$,*'
--- vim.g.netrw_preview = 1
--- vim.g.netrw_banner = 0
---
 utils.map('n', '<leader>ft', ':Dirvish<cr>', { silent = true, noremap = true })
 utils.map('n', '<leader>ff', ':Dirvish %<cr>', { silent = true, noremap = true })
 --[[--------------------------------]]
