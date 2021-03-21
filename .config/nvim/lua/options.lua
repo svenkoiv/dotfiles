@@ -55,10 +55,6 @@ utils.map('n', '<leader>m', ':Marks<cr>', { silent = true, noremap = true })
 utils.map('n', '<leader>ft', ':Dirvish<cr>', { silent = true, noremap = true })
 utils.map('n', '<leader>ff', ':Dirvish %<cr>', { silent = true, noremap = true })
 --[[--------------------------------]]
---[[ ALE CONFIGURATION            --]]
---[[--------------------------------]]
-vim.g.ale_set_highlights = 0
---[[--------------------------------]]
 --[[ LSP CONFIGURATION            --]]
 --[[--------------------------------]]
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
@@ -106,7 +102,7 @@ nvim_lsp.sumneko_lua.setup {
     Lua = {
       runtime = {
         version = 'LuaJIT',
-        path = vim.split(package.path, ';'),
+        -- path = vim.split(package.path, ';'),
       },
       diagnostics = {
         globals = {'vim'},
@@ -120,6 +116,10 @@ nvim_lsp.sumneko_lua.setup {
     },
   },
 }
+--[[--------------------------------]]
+--[[ ALE CONFIGURATION            --]]
+--[[--------------------------------]]
+vim.g.ale_set_highlights = 0
 --[[--------------------------------]]
 --[[ COMPE                        --]]
 --[[--------------------------------]]

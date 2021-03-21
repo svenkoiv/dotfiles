@@ -1,5 +1,3 @@
-local utils = require('utils')
-
 local cmd = vim.cmd
 
 vim.g.gruvbox_contrast_dark = 'soft'
