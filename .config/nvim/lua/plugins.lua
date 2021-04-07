@@ -17,4 +17,5 @@ return require('packer').startup(function()
   use {'gruvbox-community/gruvbox'}
   use {'hrsh7th/nvim-compe'}
   use {'justinmk/vim-dirvish'}
+  use {'vim-test/vim-test'}
 end)
