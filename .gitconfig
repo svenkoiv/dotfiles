@@ -1,8 +1,8 @@
 [user]
 	name = Sven Kõiv
 	email = 
-[includeIf "gitdir:~/Projects/"]
-	path = .gitconfig-work
+[includeIf "gitdir:~/projects/"]
+	path = .gitconfig_work
 [core]
 	excludesfile = ~/.gitignore_global
 [pull]
