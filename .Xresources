@@ -18,13 +18,14 @@ URxvt.cursorColor: #ebdbb2
 URxvt.cursorBlink: 0
 
 ! -- Extensions --
-URxvt.perl-ext-common:  ...,clipboard,resize-font,xresources-256,...
+URxvt.perl-ext-common:  ...,xresources-256,...
 
 ! -- Clipboard --
 URxvt.clipboard.autocopy: true
-URxvt.keysym.M-c: perl:clipboard:copy
-URxvt.keysym.M-v: perl:clipboard:paste
+URxvt.clipboard.copycmd:  xclip -i -selection clipboard
+URxvt.clipboard.pastecmd: xclip -o -selection clipboard
 
+! -- TODO --
 ! -- Yankable URLs --
 URxvt.perl-ext: default,url-select
 URxvt.keysym.M-u: perl:url-select:select_next

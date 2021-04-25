@@ -10,7 +10,7 @@ end
 --[[ OPTIONS                      --]]
 --[[--------------------------------]]
 cmd 'syntax enable'
-cmd 'filetype plugin indent on'
+-- cmd 'filetype plugin indent on'
 utils.opt('w', 'colorcolumn', '100')
 utils.opt('w', 'scrolloff', 5)
 utils.opt('w', 'relativenumber', true)
@@ -55,6 +55,10 @@ utils.map('n', '<leader>m', ':Marks<cr>', { silent = true, noremap = true })
 utils.map('n', '<leader>ft', ':Dirvish<cr>', { silent = true, noremap = true })
 utils.map('n', '<leader>ff', ':Dirvish %<cr>', { silent = true, noremap = true })
 --[[--------------------------------]]
+--[[ DADBOD CONFIGURATION         --]]
+--[[--------------------------------]]
+vim.g.impulssdb = 'postgres://localhost:5432/impulssdb'
+--[[--------------------------------]]
 --[[ LSP CONFIGURATION            --]]
 --[[--------------------------------]]
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
@@ -93,7 +97,7 @@ for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end
 
-local sumneko_root_path = '/home/skoiv/Personal/lsp/lua-language-server'
+local sumneko_root_path = '/home/skoiv/lsp/lua-language-server'
 local sumneko_binary = sumneko_root_path.."/bin/Linux/lua-language-server"
 nvim_lsp.sumneko_lua.setup {
   on_attach = on_attach,
@@ -195,15 +199,12 @@ vim.api.nvim_set_keymap('i', '<Tab>', 'v:lua.tab()', {expr = true, noremap = tru
 vim.api.nvim_set_keymap('i', '<S-Tab>', 'v:lua.s_tab()', {expr = true, noremap = true})
 
 function _G.token()
-  os.execute("node /home/skoiv/Personal/auth/index.js")
+  os.execute("node /home/skoiv/scripts/impulss/auth/index.js")
   os.execute("pm2 restart impulss")
   return true
 end
 
 function _G.translate()
-  os.execute("lua /home/skoiv/Personal/scripts/translate.lua | jq | xclip -sel clip")
+  os.execute("lua /home/skoiv/scripts/impulss/translate.lua | jq | xclip -sel clip")
   return true
 end
-
-utils.map('n', '<leader>ti', 'v:lua.token()', { expr = true, noremap = true, silent = true })
-utils.map('n', '<leader>tt', 'v:lua.translate()', { expr = true, noremap = true, silent = true })

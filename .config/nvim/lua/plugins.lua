@@ -1,7 +1,7 @@
 return require('packer').startup(function()
   use {'wbthomason/packer.nvim', opt = true}
   use {'editorconfig/editorconfig-vim'}
-  use {'junegunn/fzf', run = function() vim.fn['fzf#install()'](0) end}
+  use {'junegunn/fzf'}
   use {'junegunn/fzf.vim'}
   use {'neovim/nvim-lspconfig'}
   use {'sheerun/vim-polyglot'}
@@ -17,5 +17,5 @@ return require('packer').startup(function()
   use {'gruvbox-community/gruvbox'}
   use {'hrsh7th/nvim-compe'}
   use {'justinmk/vim-dirvish'}
-  use {'vim-test/vim-test'}
+  use {'tpope/vim-dadbod'}
 end)

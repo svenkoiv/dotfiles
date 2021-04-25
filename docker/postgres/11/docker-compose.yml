@@ -1,0 +1,20 @@
+version: '3'
+services:
+  postgres:
+    container_name: postgres_11
+    image: postgres:11
+    ports:
+      - 5432:5432
+    volumes:
+      - $HOME/docker/postgres/11/data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_INITDB_ARGS: -E UTF-8 -A trust
+      POSTGRES_HOST_AUTH_METHOD: trust
+    command: ["postgres", "-c", "log_statement=all"]
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "1"

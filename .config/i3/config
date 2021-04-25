@@ -197,7 +197,7 @@ bar {
 	position top
         status_command i3blocks -c ~/.config/i3blocks/config
   # Remove next line if you would like to see some of the system tray icons
-	tray_output none
+	# tray_output none
 	workspace_min_width 30
 	colors {
 		background #32302f
