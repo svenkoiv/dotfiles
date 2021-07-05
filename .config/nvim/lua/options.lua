@@ -10,7 +10,6 @@ end
 --[[ OPTIONS                      --]]
 --[[--------------------------------]]
 cmd 'syntax enable'
--- cmd 'filetype plugin indent on'
 utils.opt('w', 'colorcolumn', '100')
 utils.opt('w', 'scrolloff', 5)
 utils.opt('w', 'relativenumber', true)
@@ -64,7 +63,9 @@ vim.g.impulssdb = 'postgres://localhost:5432/impulssdb'
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
     underline = true,
-    virtual_text = false,
+    virtual_text = {
+      spacing = 4,
+    },
     signs = function(bufnr, _)
       local ok, result = pcall(vim.api.nvim_buf_get_var, bufnr, 'show_signs')
       if not ok then
@@ -76,7 +77,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   }
 )
 
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
@@ -90,6 +91,9 @@ local on_attach = function(_, bufnr)
   buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<leader>d', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
   buf_set_keymap('n', '<leader>a', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+  if client.resolved_capabilities.document_formatting then
+    buf_set_keymap("n", "<leader>fo", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+  end
 end
 
 local servers = { "tsserver", "jdtls" }
@@ -208,3 +212,13 @@ function _G.translate()
   os.execute("lua /home/skoiv/scripts/impulss/translate.lua | jq | xclip -sel clip")
   return true
 end
+
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained",
+  indent = {
+    enable = true
+  },
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+  }
+}
