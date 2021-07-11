@@ -4,7 +4,7 @@ return require('packer').startup(function()
   use {'junegunn/fzf'}
   use {'junegunn/fzf.vim'}
   use {'neovim/nvim-lspconfig'}
-  -- use {'sheerun/vim-polyglot'}
+  use {'sheerun/vim-polyglot'}
   use {'tpope/vim-commentary'}
   use {'tpope/vim-fugitive'}
   use {'tpope/vim-repeat'}
@@ -18,5 +18,4 @@ return require('packer').startup(function()
   use {'hrsh7th/nvim-compe'}
   use {'justinmk/vim-dirvish'}
   use {'tpope/vim-dadbod'}
-  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 end)

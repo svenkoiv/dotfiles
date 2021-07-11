@@ -212,13 +212,3 @@ function _G.translate()
   os.execute("lua /home/skoiv/scripts/impulss/translate.lua | jq | xclip -sel clip")
   return true
 end
-
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained",
-  indent = {
-    enable = true
-  },
-  highlight = {
-    enable = true,              -- false will disable the whole extension
-  }
-}

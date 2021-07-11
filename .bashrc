@@ -1,4 +1,4 @@
-#
+
 # ~/.bashrc
 #
 
@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
-alias vim='nvim'
+# alias vim='nvim'
 
 PS1='[\u@\h \W]\$ '
 
@@ -26,7 +26,11 @@ HISTIGNORE='exit:cd:ls:bg:fg:history:f:fd'
 HISTSIZE=10000
 HISTFILESIZE=10000
 
+export TERM=xterm
+
 # To append commands to the history file, rather than overwrite it
 shopt -s histappend
 
 eval "$(direnv hook bash)"
+
+alias luamake=/home/skoiv/lsp/lua-language-server/3rd/luamake/luamake

@@ -25,8 +25,7 @@ URxvt.clipboard.autocopy: true
 URxvt.clipboard.copycmd:  xclip -i -selection clipboard
 URxvt.clipboard.pastecmd: xclip -o -selection clipboard
 
-! -- TODO --
-! -- Yankable URLs --
+! -- Yankable URLs (urxvt-perls) --
 URxvt.perl-ext: default,url-select
 URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.url-select.launcher: /usr/bin/xdg-open
