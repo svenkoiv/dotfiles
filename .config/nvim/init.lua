@@ -10,8 +10,10 @@ end
 
 vim.cmd [[packadd packer.nvim]]
 
--- vim.lsp.set_log_level("debug")
-
 require('plugins')
 require('options')
+require('scripts')
 require('colorscheme')
+
+-- For LSP debugging
+-- vim.lsp.set_log_level("debug")

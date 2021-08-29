@@ -48,6 +48,7 @@ utils.map('n', '<leader>h:', ':History:<cr>', { silent = true, noremap = true })
 utils.map('n', '<leader>h/', ':History/<cr>', { silent = true, noremap = true })
 utils.map('n', '<leader>c', ':Commands<cr>', { silent = true, noremap = true })
 utils.map('n', '<leader>m', ':Marks<cr>', { silent = true, noremap = true })
+
 --[[--------------------------------]]
 --[[ DIRVISH CONFIGURATION        --]]
 --[[--------------------------------]]
@@ -57,6 +58,7 @@ utils.map('n', '<leader>ff', ':Dirvish %<cr>', { silent = true, noremap = true }
 --[[ DADBOD CONFIGURATION         --]]
 --[[--------------------------------]]
 vim.g.impulssdb = 'postgres://localhost:5432/impulssdb'
+vim.g.airportdb = 'postgres://airport_app:test@localhost:5432/airport'
 --[[--------------------------------]]
 --[[ LSP CONFIGURATION            --]]
 --[[--------------------------------]]
@@ -189,6 +191,7 @@ utils.map("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
 utils.map("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
 utils.map("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 utils.map("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+
 --[[--------------------------------]]
 --[[ CUSTOM                       --]]
 --[[--------------------------------]]
@@ -201,14 +204,3 @@ end
 
 vim.api.nvim_set_keymap('i', '<Tab>', 'v:lua.tab()', {expr = true, noremap = true})
 vim.api.nvim_set_keymap('i', '<S-Tab>', 'v:lua.s_tab()', {expr = true, noremap = true})
-
-function _G.token()
-  os.execute("node /home/skoiv/scripts/impulss/auth/index.js")
-  os.execute("pm2 restart impulss")
-  return true
-end
-
-function _G.translate()
-  os.execute("lua /home/skoiv/scripts/impulss/translate.lua | jq | xclip -sel clip")
-  return true
-end
