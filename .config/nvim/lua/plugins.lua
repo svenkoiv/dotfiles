@@ -1,6 +1,5 @@
 return require('packer').startup(function()
   use {'wbthomason/packer.nvim', opt = true}
-  use {'editorconfig/editorconfig-vim'}
   use {'junegunn/fzf'}
   use {'junegunn/fzf.vim'}
   use {'neovim/nvim-lspconfig'}
@@ -13,9 +12,19 @@ return require('packer').startup(function()
   use {'tpope/vim-eunuch'}
   use {'vimwiki/vimwiki'}
   use {'dense-analysis/ale'}
-  use {'honza/vim-snippets'}
   use {'gruvbox-community/gruvbox'}
-  use {'hrsh7th/nvim-compe'}
+  use {
+    'hrsh7th/nvim-cmp',
+    requires = {
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-nvim-lua',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-vsnip',
+      'hrsh7th/vim-vsnip',
+      'rafamadriz/friendly-snippets'
+    }
+  }
   use {'justinmk/vim-dirvish'}
   use {'tpope/vim-dadbod'}
 end)

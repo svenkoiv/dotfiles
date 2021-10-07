@@ -12,6 +12,7 @@ vim.cmd [[packadd packer.nvim]]
 
 require('plugins')
 require('options')
+require('lsp')
 require('scripts')
 require('colorscheme')
 

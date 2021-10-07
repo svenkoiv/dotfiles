@@ -38,7 +38,7 @@ end
 function translate()
 	found_translations = find_translations()
 
-	file = io.open('/home/skoiv/projects/impulss/translations/translations.json', "r")
+	file = io.open(translationPath, "r")
 	current_translations = cjson.decode(file:read("*all"))
 	file:close()
 
@@ -47,9 +47,10 @@ function translate()
 		if(current_translations[key] == nil)
 		then
 			new_translations[key] = {
-				et = "",
-				en = " (en)",
-				ru = " (ru)"
+				en = cjson.null,
+				et = cjson.null,
+				ru = cjson.null,
+				example = ""
 			}
 		end
 	end
