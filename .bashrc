@@ -34,3 +34,5 @@ shopt -s histappend
 eval "$(direnv hook bash)"
 
 alias luamake=/home/skoiv/lsp/lua-language-server/3rd/luamake/luamake
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+

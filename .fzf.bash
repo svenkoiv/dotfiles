@@ -72,6 +72,9 @@ function git_create_branch() {
   )
 
   if [ -n "$branch_name" ]; then
-		git checkout -b "$branch_name"
+    COMPREPLY=($branch_name)
+    printf '\e[5n'
   fi
 }
+
+[ -n "$BASH" ] && complete -F git_create_branch -o default -o bashdefault git checkout -b
