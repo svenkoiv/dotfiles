@@ -26,7 +26,7 @@ HISTIGNORE='exit:cd:ls:bg:fg:history:f:fd'
 HISTSIZE=10000
 HISTFILESIZE=10000
 
-export TERM=xterm
+export TERM=xterm-256color
 
 # To append commands to the history file, rather than overwrite it
 shopt -s histappend
@@ -36,3 +36,9 @@ eval "$(direnv hook bash)"
 alias luamake=/home/skoiv/lsp/lua-language-server/3rd/luamake/luamake
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+
+PATH="/home/skoiv/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/skoiv/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/skoiv/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/skoiv/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/skoiv/perl5"; export PERL_MM_OPT;

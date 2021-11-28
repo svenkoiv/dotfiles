@@ -22,7 +22,7 @@ function capture_command_output(cmd)
 end
 
 function find_translations()
-	local grep_result = capture_command_output("git grep -Porh \"(?<=translate\\(')(\\w\\.?)*(?=')\" .")
+	local grep_result = capture_command_output("git grep -Porh \"((?<=translate\\(')(\\w\\.?)*(?='))|(?<=headingKey: ')(\\w\\.?)*(?=')\" .")
 
 	found_translations = {}
 	for key,i in grep_result:gmatch("[^%s]+") do

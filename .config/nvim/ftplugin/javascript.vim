@@ -18,3 +18,8 @@ let b:ale_fixers = ['eslint']
 
 " set foldmethod=expr
 " set foldexpr=nvim_treesitter#foldexpr()
+
+" Additional quickfix list error format for eslint
+" `eslint --format compact`
+" cex system("eslint 'src/**/*.{js,ts,tsx}' --max-warnings 0 --format compact") | copen
+set errorformat+=%f:\ line\ %l\\,\ col\ %c\\,\ %m,%-G%.%#

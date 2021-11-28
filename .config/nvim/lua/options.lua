@@ -62,3 +62,52 @@ vim.g.ale_set_highlights = 0
 vim.g.impulssdb = 'postgres://localhost:5432/impulssdb'
 vim.g.aesdb = 'postgres://localhost:5432/aesdb'
 vim.g.airportdb = 'postgres://airport_app:test@localhost:5432/airport'
+
+--[[--------------------------------]]
+--[[ VSNIP CONFIGURATION          --]]
+--[[--------------------------------]]
+vim.g.vsnip_snippet_dir=vim.fn.stdpath('config') .. '/snippets'
+utils.map('n', '<leader>es', ':VsnipOpen<cr>', { silent = true, noremap = true })
+
+--[[--------------------------------]]
+--[[ LUALINE CONFIGURATION        --]]
+--[[--------------------------------]]
+-- require'nvim-web-devicons'.setup{}
+-- require'lualine'.setup{
+--   options = { theme  = 'gruvbox' },
+-- }
+-- require'nvim-treesitter.configs'.setup {
+--   highlight = {
+--     enable = true,
+--     custom_captures = {
+--       -- Highlight the @foo.bar capture group with the "Identifier" highlight group.
+--       ["foo.bar"] = "Identifier",
+--     },
+--     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+--     -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+--     -- Using this option may slow down your editor, and you may see some duplicate highlights.
+--     -- Instead of true it can also be a list of languages
+--     additional_vim_regex_highlighting = false,
+--   },
+-- }
+
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
+  ignore_install = { "javascript" }, -- List of parsers to ignore installing
+  highlight = {
+    enable = false,              -- false will disable the whole extension
+  },
+  indent = {
+    enable = false,
+  },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "gnn",
+      node_incremental = "grn",
+      scope_incremental = "grc",
+      node_decremental = "grm",
+    },
+  },
+}

@@ -68,7 +68,7 @@ function git_create_branch() {
       --preview-window=top:wrap |
     cut -f1 |
     sed -e 's/\. /\t/' -e 's/ä/a/gi' -e 's/ö/o/gi' -e 's/õ/o/gi' -e 's/ü/u/gi' -e 's/[^a-zA-Z0-9\t]/-/g' -e 's/-\+/-/g' -e 's/-\+$//' |
-    awk '{printf "%s/%s", $1, tolower($2)}'
+    awk '{printf "%s-%s", $1, tolower($2)}'
   )
 
   if [ -n "$branch_name" ]; then

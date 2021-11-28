@@ -71,104 +71,134 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ale = {
     loaded = true,
-    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/ale"
+    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/ale",
+    url = "https://github.com/dense-analysis/ale"
   },
   ["cmp-buffer"] = {
     loaded = true,
-    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/cmp-buffer"
+    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
-    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
+    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
   ["cmp-nvim-lua"] = {
     loaded = true,
-    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua"
+    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua",
+    url = "https://github.com/hrsh7th/cmp-nvim-lua"
   },
   ["cmp-path"] = {
     loaded = true,
-    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/cmp-path"
+    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
   },
   ["cmp-vsnip"] = {
     loaded = true,
-    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/cmp-vsnip"
+    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
+    url = "https://github.com/hrsh7th/cmp-vsnip"
   },
-  ["editorconfig-vim"] = {
+  ["friendly-snippets"] = {
     loaded = true,
-    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/editorconfig-vim"
+    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
   },
   fzf = {
     loaded = true,
-    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/fzf"
+    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/fzf",
+    url = "https://github.com/junegunn/fzf"
   },
   ["fzf.vim"] = {
     loaded = true,
-    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/fzf.vim"
-  },
-  gruvbox = {
-    loaded = true,
-    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/gruvbox"
+    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/fzf.vim",
+    url = "https://github.com/junegunn/fzf.vim"
   },
   ["nvim-cmp"] = {
     loaded = true,
-    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/nvim-cmp"
+    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-jdtls"] = {
+    loaded = true,
+    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/nvim-jdtls",
+    url = "https://github.com/mfussenegger/nvim-jdtls"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["packer.nvim"] = {
     loaded = false,
     needs_bufread = false,
-    path = "/home/skoiv/.local/share/nvim/site/pack/packer/opt/packer.nvim"
+    path = "/home/skoiv/.local/share/nvim/site/pack/packer/opt/packer.nvim",
+    url = "https://github.com/wbthomason/packer.nvim"
+  },
+  vim = {
+    loaded = true,
+    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/vim",
+    url = "https://github.com/dracula/vim"
   },
   ["vim-commentary"] = {
     loaded = true,
-    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/vim-commentary"
+    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/vim-commentary",
+    url = "https://github.com/tpope/vim-commentary"
   },
   ["vim-dadbod"] = {
     loaded = true,
-    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/vim-dadbod"
+    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/vim-dadbod",
+    url = "https://github.com/tpope/vim-dadbod"
   },
   ["vim-dirvish"] = {
     loaded = true,
-    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/vim-dirvish"
+    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/vim-dirvish",
+    url = "https://github.com/justinmk/vim-dirvish"
   },
   ["vim-eunuch"] = {
     loaded = true,
-    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/vim-eunuch"
+    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/vim-eunuch",
+    url = "https://github.com/tpope/vim-eunuch"
   },
   ["vim-fugitive"] = {
     loaded = true,
-    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/vim-fugitive"
+    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-polyglot"] = {
     loaded = true,
-    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/vim-polyglot"
+    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/vim-polyglot",
+    url = "https://github.com/sheerun/vim-polyglot"
   },
   ["vim-repeat"] = {
     loaded = true,
-    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/vim-repeat"
-  },
-  ["vim-snippets"] = {
-    loaded = true,
-    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/vim-snippets"
+    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/vim-repeat",
+    url = "https://github.com/tpope/vim-repeat"
   },
   ["vim-surround"] = {
     loaded = true,
-    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/vim-surround"
+    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
   },
   ["vim-unimpaired"] = {
     loaded = true,
-    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/vim-unimpaired"
+    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/vim-unimpaired",
+    url = "https://github.com/tpope/vim-unimpaired"
   },
   ["vim-vsnip"] = {
     loaded = true,
-    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/vim-vsnip"
+    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/vim-vsnip",
+    url = "https://github.com/hrsh7th/vim-vsnip"
   },
   vimwiki = {
     loaded = true,
-    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/vimwiki"
+    path = "/home/skoiv/.local/share/nvim/site/pack/packer/start/vimwiki",
+    url = "https://github.com/vimwiki/vimwiki"
   }
 }
 
