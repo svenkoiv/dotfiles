@@ -11,7 +11,7 @@ return require('packer').startup(function()
   use {'tpope/vim-unimpaired'}
   use {'tpope/vim-eunuch'}
   use {'vimwiki/vimwiki'}
-  use {'dense-analysis/ale'}
+  -- use {'dense-analysis/ale'}
   use {'gruvbox-community/gruvbox'}
   use {'mfussenegger/nvim-jdtls'}
   use {'nvim-treesitter/nvim-treesitter'}

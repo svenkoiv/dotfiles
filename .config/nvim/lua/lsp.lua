@@ -142,3 +142,5 @@ nvim_lsp["jdtls"].setup {
     "--add-opens", "java.base/java.lang=ALL-UNNAMED"
   },
 }
+
+require'lspconfig'.eslint.setup{}
