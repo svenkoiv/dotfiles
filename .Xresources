@@ -19,12 +19,17 @@ URxvt.cursorColor: #ebdbb2
 URxvt.cursorBlink: 0
 
 ! -- Extensions --
-URxvt.perl-ext-common:  ...,xresources-256,...
+URxvt.perl-ext-common:  ...,xresources-256,keyboard-select,selection-to-clipboard,...
+
+! -- Selection --
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
 
 ! -- Clipboard --
 URxvt.clipboard.autocopy: true
 URxvt.clipboard.copycmd:  xclip -i -selection clipboard
 URxvt.clipboard.pastecmd: xclip -o -selection clipboard
+
 
 ! -- Yankable URLs (urxvt-perls) --
 URxvt.perl-ext: default,url-select

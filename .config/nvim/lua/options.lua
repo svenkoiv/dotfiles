@@ -61,7 +61,6 @@ vim.g.ale_set_highlights = 0
 --[[--------------------------------]]
 vim.g.impulssdb = 'postgres://localhost:5432/impulssdb'
 vim.g.aesdb = 'postgres://localhost:5432/aesdb'
-vim.g.airportdb = 'postgres://airport_app:test@localhost:5432/airport'
 
 --[[--------------------------------]]
 --[[ VSNIP CONFIGURATION          --]]
@@ -92,15 +91,8 @@ utils.map('n', '<leader>es', ':VsnipOpen<cr>', { silent = true, noremap = true }
 -- }
 
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
-  ignore_install = { "javascript" }, -- List of parsers to ignore installing
-  highlight = {
-    enable = false,              -- false will disable the whole extension
-  },
-  indent = {
-    enable = false,
-  },
+  -- ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages }
+  ensure_installed = "typescript", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   incremental_selection = {
     enable = true,
     keymaps = {
@@ -110,4 +102,19 @@ require'nvim-treesitter.configs'.setup {
       node_decremental = "grm",
     },
   },
+  sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
+  ignore_install = { "javascript" }, -- List of parsers to ignore installing
+  highlight = {
+    enable = false,              -- false will disable the whole extension
+  },
+  indent = {
+    enable = false,
+  },
 }
+
+--[[--------------------------------]]
+--[[ SESSIONS CONFIGURATION       --]]
+--[[--------------------------------]]
+-- utils.map('n', '<leader>mks', ':Marks<cr>', { silent = true, noremap = true })
+-- utils.map('n', '<leader>ss', ':mks! ~/.vim-sessions/.vim<left><left><left><left>', { silent = false, noremap = true })
+-- utils.map('n', '<leader>sr', ':so ~/.vim-sessions/', { silent = false, noremap = true })

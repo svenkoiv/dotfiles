@@ -27,6 +27,7 @@ HISTSIZE=10000
 HISTFILESIZE=10000
 
 export TERM=xterm-256color
+# export TERM=alacritty
 
 # To append commands to the history file, rather than overwrite it
 shopt -s histappend

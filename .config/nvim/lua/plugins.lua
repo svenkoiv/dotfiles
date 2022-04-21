@@ -14,7 +14,10 @@ return require('packer').startup(function()
   -- use {'dense-analysis/ale'}
   use {'gruvbox-community/gruvbox'}
   use {'mfussenegger/nvim-jdtls'}
-  use {'nvim-treesitter/nvim-treesitter'}
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
   -- use {
   --   'nvim-lualine/lualine.nvim',
   --   requires = {'kyazdani42/nvim-web-devicons', opt = true}
