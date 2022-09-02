@@ -21,21 +21,11 @@ fzf-down() {
 }
 
 
-gb() {
-	is_in_git_repo || return
-	git branch -a --color=always | grep -v '/HEAD\s' | sort |
-		fzf-down --ansi --multi --tac --preview-window right:70% \
-		--preview 'git log --oneline --graph --date=short --color=always --pretty="format:%C(auto)%cd %h%d %s" $(sed s/^..// <<< {} | cut -d" " -f1) | head -'$LINES |
-		sed 's/^..//' | cut -d' ' -f1 |
-		sed 's#^remotes/##'
-}
-
-bind '"\C-g\C-b": "$(gb)\e\C-e\er"'
-
 export FZF_DEFAULT_OPTS="--color=bg+:#262626,info:15,header:#ff0000,marker:15,prompt:15,fg:245,spinner:15,hl:15,pointer:15,hl+:15 --multi --bind='alt-t:toggle-all'"
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
+# PSQL
 _fzf_complete_psql() {
   _fzf_complete --multi --reverse --prompt="psql> " -- "$@" < <(
 		echo "postgresql://aes:aes@toll-an-db0.cloud.cyber.ee"
@@ -45,9 +35,22 @@ _fzf_complete_psql() {
 		echo "postgresql://impulss:test@toll-an-db1.cloud.cyber.ee"
   )
 }
+
 [ -n "$BASH" ] && complete -F _fzf_complete_psql -o default -o bashdefault psql
 
-function git_create_branch() {
+# GIT
+function git-checkout-branch() {
+	is_in_git_repo || return
+	git branch -a --color=always | grep -v '/HEAD\s' | sort |
+		fzf-down --ansi --multi --tac --preview-window right:70% \
+		--preview 'git log --oneline --graph --date=short --color=always --pretty="format:%C(auto)%cd %h%d %s" $(sed s/^..// <<< {} | cut -d" " -f1) | head -'$LINES |
+		sed 's/^..//' | cut -d' ' -f1 |
+		sed 's#^remotes/##'
+}
+
+bind '"\C-g\C-b": "$(git-checkout-branch)\e\C-e\er"'
+
+function git-fetch-branch() {
   local jq_template branch_name
   jq_template='"'\
 'RM\(.id). \(.subject)'\
@@ -58,7 +61,7 @@ function git_create_branch() {
 'Description: \(.description)\n'\
 '"'
   branch_name=$(
-		curl -n -s 'https://rm-int.cyber.ee/ito/issues.xml?query_id=664&limit=1000' | xq | \
+    curl -n -s 'https://rm-int.cyber.ee/ito/issues.xml?query_id=664&limit=1000' | xq | \
     jq ".issues | .issue[] | $jq_template" |
     sed -e 's/"\(.*\)"/\1/' -e 's/\\t/\t/' |
     fzf \
@@ -72,9 +75,8 @@ function git_create_branch() {
   )
 
   if [ -n "$branch_name" ]; then
-    COMPREPLY=($branch_name)
-    printf '\e[5n'
+    printf $branch_name
   fi
 }
 
-[ -n "$BASH" ] && complete -F git_create_branch -o default -o bashdefault git checkout -b
+bind '"\C-g\C-f\C-b": "$(git-fetch-branch)\e\C-e\er"'

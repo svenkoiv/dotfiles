@@ -33,4 +33,3 @@ function _G.translate_nctsp5()
   os.execute("lua /home/skoiv/scripts/cyber/translate.lua /home/skoiv/projects/nctsp5/translations/translations.ui.json | jq -S | xclip -sel clip")
   return true
 end
-

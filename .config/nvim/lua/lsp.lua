@@ -142,3 +142,4 @@ nvim_lsp["jdtls"].setup {
 }
 
 require'lspconfig'.eslint.setup{}
+require'lspconfig'.tailwindcss.setup{}

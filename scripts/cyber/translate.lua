@@ -32,6 +32,15 @@ function find_translations()
 		end
 	end
 
+	local grep_result_multiline = capture_command_output("git grep -l translate | xargs grep -Phoz \"(?<=translate\\()(?:\\s+')(\\w+\\.?)+(?=')\" | tr \"\\0\" \"'\"")
+
+	for key,i in grep_result_multiline:gmatch("[^%s']+") do
+		if (found_translations[key] == nil)
+		then
+			table.insert(found_translations, key)
+		end
+	end
+
 	return found_translations
 end
 
