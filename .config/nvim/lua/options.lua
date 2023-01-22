@@ -4,6 +4,7 @@ local utils = require('utils')
 --[[ OPTIONS                      --]]
 --[[--------------------------------]]
 vim.cmd 'syntax enable'
+vim.cmd 'set noswapfile'
 utils.opt('w', 'colorcolumn', '100')
 utils.opt('w', 'scrolloff', 5)
 utils.opt('w', 'relativenumber', true)
@@ -94,7 +95,7 @@ require'nvim-treesitter.configs'.setup {
     enable = false,              -- false will disable the whole extension
   },
   indent = {
-    enable = false,
+    enable = true,
   },
 }
 
@@ -104,3 +105,4 @@ require'nvim-treesitter.configs'.setup {
 -- utils.map('n', '<leader>mks', ':Marks<cr>', { silent = true, noremap = true })
 -- utils.map('n', '<leader>ss', ':mks! ~/.vim-sessions/.vim<left><left><left><left>', { silent = false, noremap = true })
 -- utils.map('n', '<leader>sr', ':so ~/.vim-sessions/', { silent = false, noremap = true })
+--
