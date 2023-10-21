@@ -95,7 +95,7 @@ require'nvim-treesitter.configs'.setup {
     enable = false,              -- false will disable the whole extension
   },
   indent = {
-    enable = true,
+    enable = false,
   },
 }
 

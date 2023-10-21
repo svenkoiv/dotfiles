@@ -10,7 +10,7 @@ return require('packer').startup(function()
     end
   }
   use {'neovim/nvim-lspconfig'}
-  -- use {'sheerun/vim-polyglot'}
+  use {'sheerun/vim-polyglot'}
   use {'tpope/vim-commentary'}
   use {'tpope/vim-fugitive'}
   use {'tpope/vim-repeat'}
